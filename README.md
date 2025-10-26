@@ -72,21 +72,21 @@ A sleek, full-stack **banking application** that brings **account creation** to 
 
 ## Backend Setup (FastAPI + PostgreSQL)
 
-# Clone the repo
+### Clone the repo
 git clone <repo-url>
 cd banking-system/backend
 
-# Install dependencies
+### Install dependencies
 pip install -r requirements.txt
 
-# Set environment variables
+### Set environment variables
 DB_USER=postgres
 DB_PASSWORD=postgres
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=banking_db
 
-# Run FastAPI server
+### Run FastAPI server
 uvicorn app.main:app --reload
 
 ## Frontend Setup (React.js)
