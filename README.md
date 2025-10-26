@@ -34,7 +34,7 @@ The flow:
 
 ## Project Structure
 
-banking-system/
+'''banking-system/
 ├── backend/
 │ ├── app/
 │ │ ├── main.py
@@ -55,7 +55,7 @@ banking-system/
 │ │ └── utils/
 │ ├── package.json
 │ └── .env
-└── README.md
+└── README.md'''
 
 
 
