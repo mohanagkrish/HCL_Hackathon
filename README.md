@@ -60,7 +60,8 @@ A sleek, full-stack **banking application** that brings **account creation** to 
 │ ├── index.js
 │ └── api/
 │ └── accountApi.js
-└── package.json```
+└── package.json 
+```
 
 ## Setup Instruction
 
