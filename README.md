@@ -1,6 +1,6 @@
  # HCL_Hackathon - SmartBank - Account Creation
- 
-  ##**Usecase 2**
+
+  **Usecase 2**
 
 A sleek, full-stack **banking application** that brings **account creation** to life with **FastAPI**, **React**, and **PostgreSQL**. Designed for hackathons, built for real-world clarity, and engineered to impress!  
 
@@ -32,7 +32,7 @@ A sleek, full-stack **banking application** that brings **account creation** to 
 
 ## Project Structure
 
-banking-system/
+'''banking-system/
 ├── backend/
 │ ├── app/
 │ │ ├── main.py
@@ -60,7 +60,7 @@ banking-system/
 │ ├── index.js
 │ └── api/
 │ └── accountApi.js
-└── package.json
+└── package.json'''
 
 ## Setup Instruction
 
