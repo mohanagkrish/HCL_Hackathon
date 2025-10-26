@@ -1,5 +1,7 @@
  # HCL_Hackathon - SmartBank - Account Creation
-  **Usecase 2**
+ 
+  ##**Usecase 2**
+
 A sleek, full-stack **banking application** that brings **account creation** to life with **FastAPI**, **React**, and **PostgreSQL**. Designed for hackathons, built for real-world clarity, and engineered to impress!  
 
 ##  Table of Contents
@@ -12,7 +14,6 @@ A sleek, full-stack **banking application** that brings **account creation** to 
 - [Technologies Used](#-technologies-used)
 - [Flow Summary](#-flow-summary)
 - [Key Highlights](#-key-highlights)
-- [Author](#-author)
 
 ## Features
 

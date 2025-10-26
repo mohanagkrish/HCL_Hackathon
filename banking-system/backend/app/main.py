@@ -15,4 +15,4 @@ app.include_router(account_controller.router)
 
 @app.get("/")
 def root():
-    return {"message": "Welcome to Banking System API 🚀"}
+    return {"message": "Welcome to Banking System API "}
