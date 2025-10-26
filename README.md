@@ -1,4 +1,4 @@
-# HCL_Hackathon - SmartBank - Account Creation
+<!-- # HCL_Hackathon - SmartBank - Account Creation
 SmartBank - Modular Banking Backend System with secure account creation, authentication, and user management.
 
 ## Table of Contents
@@ -127,6 +127,66 @@ Headers: Authorization: Bearer <token>
 - created_at
 - updated_at
 
+
+
+
+
+
+
+ -->
+
+
+# Banking System - Account Creation Module
+A full-stack banking application that allows users to register, authenticate, and open bank accounts securely.
+
+**Key Features**
+
+### Account Creation Flow
+- **Customer Trigger:** User requests to open a new account  
+- **Account Type Selection:** Choose from Savings, Current, or Fixed Deposit  
+- **System Generated Account Number:** Unique 16-digit account number generated automatically  
+- **Initial Deposit Validation:** Ensures the minimum deposit requirements are met  
+
+### Account Types
+- **Savings Account:** Minimum $500, 3.5% interest  
+- **Current Account:** Minimum $1000, no interest  
+- **Fixed Deposit:** Minimum $5000, 5.5% interest  
+
+### Security Features
+- JWT token-based authentication  
+- Password hashing using bcrypt  
+- User verification and validation  
+- Protected API endpoints  
+
+**Architecture**
+
+**Backend (FastAPI + PostgreSQL)**
+- Controller Layer: REST API endpoints  
+- Service Layer: Business logic and validations  
+- Repository Layer: Database operations  
+- Security: JWT authentication, password hashing  
+
+**Frontend (React)**
+- Modern and responsive UI  
+- Components: Login, Register, Dashboard  
+- JWT token management and protected routes  
+
+**Project Structure**
+
+
+**Setup Instructions**
+
+### Prerequisites
+- Python 3.8+  
+- Node.js 14+  
+- PostgreSQL 12+  
+
+### Backend Setup
+1. **Create and activate a virtual environment**
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
 
 
