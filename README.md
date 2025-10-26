@@ -1,193 +1,120 @@
-<!-- # HCL_Hackathon - SmartBank - Account Creation
-SmartBank - Modular Banking Backend System with secure account creation, authentication, and user management.
+ # HCL_Hackathon - SmartBank - Account Creation
+  **Usecase 2**
+A sleek, full-stack **banking application** that brings **account creation** to life with **FastAPI**, **React**, and **PostgreSQL**. Designed for hackathons, built for real-world clarity, and engineered to impress!  
 
-## Table of Contents
-1. [Overview](#overview)
-2. [Architecture](#architecture)
-3. [Project Structure](#project-structure)
-4. [Setup Instructions](#setup-instructions)
-5. [Security Features](#security-features)
-6. [API Endpoints](#api-endpoints)
-7. [Features](#features)
-8. [Database Schema](#database-schema)
+##  Table of Contents
+- [Features](#-features)
+- [Project Structure](#-project-structure)
+- [Setup Instruction](#-setup-instruction)
+- [Backend Setup (FastAPI + PostgreSQL)](#-backend-setup-fastapi--postgresql)
+- [Frontend Setup (React.js)](#-frontend-setup-reactjs)
+- [API Endpoint](#-api-endpoint)
+- [Technologies Used](#-technologies-used)
+- [Flow Summary](#-flow-summary)
+- [Key Highlights](#-key-highlights)
+- [Author](#-author)
 
-## Overview
-This backend service allows customers to request new bank accounts.  
-The flow:
-1. Customer chooses account type (Savings, Current, FD)  
-2. System generates a unique account number  
-3. Customer makes an initial deposit
+## Features
 
-## Architecture
-
-### Backend (FastAPI + PostgreSQL)
-- Controller Layer: REST API endpoints
-- Service Layer: Business logic and validations
-- Repository Layer: Database operations
-- Security: JWT authentication, password hashing with bcrypt
-
-### Frontend (React)
-- Modern UI with responsive design
-- Login, Register, and Dashboard components
-- JWT token management
-- Protected routes
+- **Create New Accounts** effortlessly:  
+  - Savings  
+  - Current  
+  - Fixed Deposit (FD)  
+- **Automatic 16-digit account numbers** – unique & secure  
+- **Smart deposit validation**:  
+  - Savings: Min $500  
+  - Current: Min $1000  
+  - FD: Min $5000  
+- Clean **Controller → Service → Repository architecture**  
+- Fast, lightweight, and intuitive **REST API** with **FastAPI**  
+- Beautiful **React frontend** for instant account creation  
 
 ## Project Structure
-HCL_Hackathon/
+
+banking-system/
 ├── backend/
 │ ├── app/
 │ │ ├── main.py
 │ │ ├── config.py
 │ │ ├── database.py
 │ │ ├── models/
+│ │ │ └── account_model.py
 │ │ ├── controllers/
-│ │ └── services/
-│ ├── requirements.txt
-│ └── .env
-├── frontend/
-│ ├── src/
-│ │ ├── components/
+│ │ │ └── account_controller.py
 │ │ ├── services/
+│ │ │ └── account_service.py
+│ │ ├── repositories/
+│ │ │ └── account_repository.py
+│ │ ├── schemas/
+│ │ │ └── account_schema.py
 │ │ └── utils/
-│ ├── package.json
-│ └── .env
-└── README.md
+│ │ └── helpers.py
+│ ├── requirements.txt
+│ └── README.md
+└── frontend/
+├── src/
+│ ├── components/
+│ │ └── AccountForm.js
+│ ├── App.js
+│ ├── index.js
+│ └── api/
+│ └── accountApi.js
+└── package.json
 
-
-## Setup Instructions
+## Setup Instruction
 
 ### Prerequisites
 - Python 3.8+
 - Node.js 14+
 - PostgreSQL 12+
 
-### Backend Setup
-cd backend
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+## Backend Setup (FastAPI + PostgreSQL)
+
+# Clone the repo
+git clone <repo-url>
+cd banking-system/backend
+
+# Install dependencies
 pip install -r requirements.txt
 
-## Security Features
+# Set environment variables
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=banking_db
 
-- Passwords hashed with bcrypt
-- JWT-based authentication
-- Protected routes
+# Run FastAPI server
+uvicorn app.main:app --reload
 
-## API Endpoints
+## Frontend Setup (React.js)
 
-### Register User
-POST /api/auth/register
-Body:
-{
-"email": "user@example.com",
-"password": "Password123!",
-"full_name": "John Doe"
-}
+cd ../frontend
+npm install
+npm start
 
-### Login User
-POST /api/auth/login
-Body:
-{
-"username": "user@example.com",
-"password": "Password123!"
-}
+##  API Endpoint
 
-### Get Current User (Protected)
-GET /api/auth/me
-Headers: Authorization: Bearer <token>
+| Endpoint      | Method | Request Body                                           | Response                                           |
+|---------------|--------|--------------------------------------------------------|--------------------------------------------------|
+| `/accounts/`  | POST   | `{"account_type": "savings", "initial_deposit": 1000}` | `{"account_number": "...", "account_type": "savings", "initial_deposit": 1000}` |
 
-## Features
+## Technologies Used
 
-### Backend
-- User registration with validation
-- Secure password hashing (bcrypt)
-- JWT token generation
-- User authentication
-- Protected endpoints
-- Duplicate email prevention
-- Error handling
+- **Backend:** FastAPI, SQLAlchemy, PostgreSQL  
+- **Frontend:** React.js, Axios  
+- **Others:** Python, Pydantic, dotenv
 
-### Frontend
-- Responsive UI
-- Login & registration forms with validation
-- Dashboard displaying user info
-- JWT token management
-- Protected routes
-- Error notifications & loading states
+## Flow Summary
 
+1. **User selects account type** (Savings, Current, FD)  
+2. **Backend validates the initial deposit**  
+3. **System generates a unique 16-digit account number**  
+4. **Account saved in PostgreSQL**  
+5. **Response returned to frontend**
 
-##  Database_Scehma
+## Key Highlights
 
-**Users Table:**
-- id
-- email
-- full_name
-- hashed_password
-- is_active
-- created_at
-- updated_at
-
-
-
-
-
-
-
- -->
-
-
-# Banking System - Account Creation Module
-A full-stack banking application that allows users to register, authenticate, and open bank accounts securely.
-
-**Key Features**
-
-### Account Creation Flow
-- **Customer Trigger:** User requests to open a new account  
-- **Account Type Selection:** Choose from Savings, Current, or Fixed Deposit  
-- **System Generated Account Number:** Unique 16-digit account number generated automatically  
-- **Initial Deposit Validation:** Ensures the minimum deposit requirements are met  
-
-### Account Types
-- **Savings Account:** Minimum $500, 3.5% interest  
-- **Current Account:** Minimum $1000, no interest  
-- **Fixed Deposit:** Minimum $5000, 5.5% interest  
-
-### Security Features
-- JWT token-based authentication  
-- Password hashing using bcrypt  
-- User verification and validation  
-- Protected API endpoints  
-
-**Architecture**
-
-**Backend (FastAPI + PostgreSQL)**
-- Controller Layer: REST API endpoints  
-- Service Layer: Business logic and validations  
-- Repository Layer: Database operations  
-- Security: JWT authentication, password hashing  
-
-**Frontend (React)**
-- Modern and responsive UI  
-- Components: Login, Register, Dashboard  
-- JWT token management and protected routes  
-
-**Project Structure**
-
-
-**Setup Instructions**
-
-### Prerequisites
-- Python 3.8+  
-- Node.js 14+  
-- PostgreSQL 12+  
-
-### Backend Setup
-1. **Create and activate a virtual environment**
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-
-
-
-
+- **Strict validation of minimum deposits**  
+- **Automatic unique account number generation**  
+- **Controller-Service-Repository pattern** for clean, maintainable code
