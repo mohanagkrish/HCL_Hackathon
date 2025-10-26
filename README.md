@@ -33,19 +33,15 @@ The flow:
 - Protected routes
 
 ## Project Structure
-
-'''banking-system/
+HCL_Hackathon/
 ├── backend/
 │ ├── app/
 │ │ ├── main.py
 │ │ ├── config.py
 │ │ ├── database.py
 │ │ ├── models/
-│ │ ├── schemas/
 │ │ ├── controllers/
-│ │ ├── services/
-│ │ ├── repositories/
-│ │ └── utils/
+│ │ └── services/
 │ ├── requirements.txt
 │ └── .env
 ├── frontend/
@@ -55,8 +51,7 @@ The flow:
 │ │ └── utils/
 │ ├── package.json
 │ └── .env
-└── README.md'''
-
+└── README.md
 
 
 ## Setup Instructions
