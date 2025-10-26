@@ -57,7 +57,7 @@ banking-system/
 │ └── .env
 └── README.md
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 ### Prerequisites
 - Python 3.8+
@@ -65,7 +65,6 @@ banking-system/
 - PostgreSQL 12+
 
 ### Backend Setup
-```bash
 cd backend
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
